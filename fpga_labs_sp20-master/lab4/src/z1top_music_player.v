@@ -61,16 +61,42 @@ module z1top_audio_player1 (
     localparam MUSIC_DATA_WIDTH = NUM_SAMPLE_BITS;
     localparam MUSIC_NUM_SAMPLES = 44100;
     localparam MUSIC_MEM_DEPTH = 262144;
+    
+    
 
     wire [MUSIC_ADDR_WIDTH-1:0] music_mem_addr;
     wire [MUSIC_DATA_WIDTH-1:0] music_mem_rdata;
+    
+    wire [MUSIC_ADDR_WIDTH-1:0] music_440_mem_addr;
+    wire [MUSIC_DATA_WIDTH-1:0] music_440_mem_rdata;
+    assign i2s_sample_data = (SWITCHES[0] == 0 && BUTTONS[0] == 1) ? music_440_mem_rdata + 2: 
+                             (SWITCHES[0] == 0 && BUTTONS[1] == 1) ? music_440_mem_rdata - 2:
+                             music_440_mem_rdata;
+                             
+    
+    
+    
     SYNC_ROM #(
         .AWIDTH(MUSIC_ADDR_WIDTH),
         .DWIDTH(MUSIC_DATA_WIDTH),
         .DEPTH(MUSIC_MEM_DEPTH),
-        .MEM_INIT_HEX_FILE("The_Blue_Danube.mif")
+        .MEM_INIT_HEX_FILE("/home/cc/eecs151/sp20/class/eecs151-abm/fpga_labs_sp20-master/lab4/src/The_Blue_Danube.mif")
     ) music_memory (
         .q(music_mem_rdata), .addr(music_mem_addr), .clk(sclk));
+        
+    wire [MUSIC_ADDR_WIDTH-1:0] count_mem;
+    wire [MUSIC_ADDR_WIDTH-1:0] count_mem_next;
+    
+    assign count_mem_next = (SWITCHES[0] == 1 && BUTTONS[1] == 1) ? (count_mem + 2):
+    (SWITCHES[0] == 1 && BUTTONS[2] == 1) ? count_mem:
+    count_mem + 1;
+    wire mem_ce;
+    assign mem_ce = (count_mem == MUSIC_MEM_DEPTH - 1);
+    
+    REGISTER_R #(MUSIC_ADDR_WIDTH) reg1 (.clk(lrclk), .rst(mem_ce), .q(count_mem), .d(count_mem_next));
+    assign music_440_mem_addr = count_mem;
+    
+    
 
     // TODO: Your code to interface with the I2S protocol
 

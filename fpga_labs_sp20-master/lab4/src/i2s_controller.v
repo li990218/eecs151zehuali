@@ -63,7 +63,7 @@ module i2s_controller #(
 
     // 2: Generate the LRCK, the left-right clock.
 
-    wire lrck_gen_val, lrck_gen_next;
+    wire lrck_gen_val, lrck_gen_next, lrck_gen_ce;
     REGISTER_CE #(.N(1)) lrck_gen (.q(lrck_gen_val), .d(lrck_gen_next), .ce(lrck_gen_ce), .clk(clk));
     assign lrck_gen_next = lrck_gen_val + 1;
     assign lrck_gen_ce = lrck_cnt_rst;

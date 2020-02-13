@@ -20,6 +20,5 @@ module i2s_bit_serial #(
     wire [NUM_SAMPLE_BITS-1:0] sample_bit_reg_val, sample_bit_reg_next;
     REGISTER #(.N(NUM_SAMPLE_BITS)) sample_bit_reg (.q(sample_bit_reg_val), .d(sample_bit_reg_next), .clk(serial_clk));
     assign sample_bit_reg_next = i2s_sample_data;
-    assign i2s_sample_bit = sample_bit_reg_val[bit_cnt_reg_val];
-
+    assign i2s_sample_bit = sample_bit_reg_val[4'b1111 - bit_cnt_reg_val];
 endmodule

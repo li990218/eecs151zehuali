@@ -18,7 +18,7 @@ module sum_sync_mem_tb();
         .AWIDTH(AWIDTH),
         .DWIDTH(DWIDTH),
         .DEPTH(DEPTH),
-        .MEM_INIT_HEX_FILE("/home/cc/eecs151/sp20/class/eecs151-abm/fpga_labs_sp20-master/lab4/src/sync_mem_init_hex.mif")
+        .MEM_INIT_HEX_FILE("sync_mem_init_hex.mif")
     ) dut (
         .clk(clk),
         .reset(reset),
