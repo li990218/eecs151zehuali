@@ -62,8 +62,7 @@ module fifo #(
     wire enq_fire = enq_valid && enq_ready;
     wire deq_fire = deq_valid && deq_ready;
 
-    assign read_ptr_next = (enq_fire == 1'b1 && (write_ptr_val > 3'b000)) ? (read_ptr_val + 1) :
-                           (deq_fire == 1'b1 && write_ptr_val > 3'b001) ? (read_ptr_val - 1) :
+    assign read_ptr_next = (deq_fire == 1'b1) ? (read_ptr_val + 1) :
                            read_ptr_val;
     assign read_ptr_ce = deq_fire || enq_fire;
     assign buffer_addr1 = read_ptr_val;
@@ -76,15 +75,23 @@ module fifo #(
         .rst(rst), .clk(clk));
         
     
-    assign write_ptr_next = (enq_fire == 1'b1 && read_ptr_val < 3'b110) ? (write_ptr_val + 1) :
-                           (deq_fire == 1'b1 && read_ptr_val < 3'b111) ? (write_ptr_val - 1) :
+    assign write_ptr_next = (enq_fire == 1'b1) ? (write_ptr_val + 1) :
                            write_ptr_val;
-    assign write_ptr_ce = deq_fire || enq_fire;
+    assign write_ptr_ce = enq_fire;
+    
     assign buffer_addr0 = write_ptr_val;
     assign buffer_we0 = enq_fire;
+    
+    wire [3:0] num1;
+    wire [3:0] num2;
+    REGISTER_R_CE #(4) reg_num(.clk(clk), .rst(rst), .q(num1), .d(num2), .ce(enq_fire || deq_fire));
+    assign num2 = (enq_fire == 1'b1) ? num1 + 1:
+                  (deq_fire == 1'b1) ? num1 - 1:
+                  num1;
+    
 
-    assign enq_ready = ~(read_ptr_val == 3'b111);
-    assign deq_valid = ~(write_ptr_val == 3'b000);
+    assign enq_ready = ~(num1 == 4'b1000);
+    assign deq_valid = ~(num1 == 0);
 
 
     // TODO: Your code to implement the FIFO logic
