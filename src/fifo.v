@@ -62,9 +62,8 @@ module fifo #(
     wire enq_fire = enq_valid && enq_ready;
     wire deq_fire = deq_valid && deq_ready;
 
-    assign read_ptr_next = (deq_fire == 1'b1) ? (read_ptr_val + 1) :
-                           read_ptr_val;
-    assign read_ptr_ce = deq_fire || enq_fire;
+    assign read_ptr_next = read_ptr_val + 1;
+    assign read_ptr_ce = deq_fire;
     assign buffer_addr1 = read_ptr_val;
 
 
@@ -75,8 +74,7 @@ module fifo #(
         .rst(rst), .clk(clk));
         
     
-    assign write_ptr_next = (enq_fire == 1'b1) ? (write_ptr_val + 1) :
-                           write_ptr_val;
+    assign write_ptr_next = (write_ptr_val + 1);
     assign write_ptr_ce = enq_fire;
     
     assign buffer_addr0 = write_ptr_val;

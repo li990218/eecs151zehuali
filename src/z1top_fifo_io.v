@@ -48,6 +48,7 @@ module z1top_fifo_io (
                            (buttons_pressed[3] == 1) ? 4'b0100 : 0;
 
     wire [31:0] time_cnt_val, time_cnt_next;
+    wire time_cnt_rst;
     REGISTER_R #(.N(32)) time_cnt (.q(time_cnt_val), .d(time_cnt_next), .rst(time_cnt_rst), .clk(CLK_125MHZ_FPGA));
     assign time_cnt_next = time_cnt_val + 1;
     assign time_cnt_rst = (time_cnt_val == 125_000_000 / 2 - 1);
