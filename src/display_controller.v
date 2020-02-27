@@ -14,28 +14,6 @@ module display_controller #(
     parameter V_SYNC_WIDTH   = 4,
     parameter V_BACK_PORCH   = 23
 
-//    // Video resolution parameters for 1024x768 @60Hz -- pixel_freq = 65 MHz
-//    parameter H_ACTIVE_VIDEO = 1024,
-//    parameter H_FRONT_PORCH  = 24,
-//    parameter H_SYNC_WIDTH   = 136,
-//    parameter H_BACK_PORCH   = 160,
-//
-//    parameter V_ACTIVE_VIDEO = 768,
-//    parameter V_FRONT_PORCH  = 3,
-//    parameter V_SYNC_WIDTH   = 6,
-//    parameter V_BACK_PORCH   = 29
-
-
-//    // Video resolution parameters for 1280x720 @60Hz -- pixel_freq = 74.25 MHz
-//    parameter H_ACTIVE_VIDEO = 1280,
-//    parameter H_FRONT_PORCH  = 110,
-//    parameter H_SYNC_WIDTH   = 40,
-//    parameter H_BACK_PORCH   = 220,
-//
-//    parameter V_ACTIVE_VIDEO = 720,
-//    parameter V_FRONT_PORCH  = 5,
-//    parameter V_SYNC_WIDTH   = 5,
-//    parameter V_BACK_PORCH   = 20
 ) (
     input pixel_clk,
 
@@ -67,24 +45,38 @@ module display_controller #(
         .ce(x_pixel_ce),
         .rst(x_pixel_rst),
          .clk(pixel_clk));
+    assign x_pixel_next = x_pixel_val + 1;
+    
     REGISTER_R_CE #(.N(32), .INIT(0)) y_pixel (
         .q(y_pixel_val),
         .d(y_pixel_next),
         .ce(y_pixel_ce),
         .rst(y_pixel_rst),
         .clk(pixel_clk));
-
+    assign y_pixel_next = y_pixel_val + 1;
+    
+    assign x_pixel_rst = (x_pixel_next == H_FRAME);
+    assign y_pixel_rst = (y_pixel_next == V_FRAME) && (x_pixel_next == H_FRAME);
+    
+    assign x_pixel_ce = 1;
+    assign y_pixel_ce = (x_pixel_next == H_FRAME);
+    
+    assign video_out_pHSync = (x_pixel_val < H_ACTIVE_VIDEO + H_FRONT_PORCH + H_SYNC_WIDTH
+                               && x_pixel_val >= H_ACTIVE_VIDEO + H_FRONT_PORCH) ? 1'b1 : 0;
+    
+    assign video_out_pVSync = (y_pixel_val < V_ACTIVE_VIDEO + V_FRONT_PORCH + V_SYNC_WIDTH
+                               && y_pixel_val >= V_ACTIVE_VIDEO + V_FRONT_PORCH) ? 1'b1 : 0;
+    
+    assign video_out_pVDE = (x_pixel_val < H_ACTIVE_VIDEO && y_pixel_val < V_ACTIVE_VIDEO) ? 1 : 0;
+    
     // TODO: fill in the remaining logic to implement the display controller
     // Make sure your signals meet the timing specification for HSync, VSync, and Video Active
     // For task 1, do not worry about the 'pixel_stream_din', just set 'video_out_pData'
     // to some constant value to test if your code works with a monitor
     // For task 2, you need to implement proper control logic to enqueue the 'pixel_stream_din'
 
-    assign video_out_pHSync = 1'b1;
-    assign video_out_pVSync = 1'b1;
-    assign video_out_pVDE = 1'b1;
-
-    assign video_out_pdata = 24'h0000FF; // task 1
+    assign video_out_pData = 24'h0000FF; // task 1
+    
 //    assign video_out_pData = pixel_stream_din; // task 2
 
 endmodule

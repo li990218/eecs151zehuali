@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"z1top_fifo_display_bd": {
+			"proto_instances": {
+			}
+		}
+	}
+}

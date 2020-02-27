@@ -20,7 +20,7 @@ module pixel_stream #(
         .AWIDTH(IMG_ADDR_WIDTH),
         .DWIDTH(IMG_DATA_WIDTH),
         .DEPTH(IMG_NUM_PIXELS),
-        .MEM_INIT_BIN_FILE("ucb_wheeler_hall_bin.mif")
+        .MEM_INIT_BIN_FILE("/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/ucb_wheeler_hall_bin.mif")
     ) img_memory (
         .q(img_mem_rdata), .addr(img_mem_addr), .clk(pixel_clk));
 

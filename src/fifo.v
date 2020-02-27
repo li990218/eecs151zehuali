@@ -82,7 +82,7 @@ module fifo #(
     
     wire [3:0] num1;
     wire [3:0] num2;
-    REGISTER_R_CE #(4) reg_num(.clk(clk), .rst(rst), .q(num1), .d(num2), .ce(enq_fire || deq_fire));
+    REGISTER_R_CE #(.N(4), .INIT(0)) reg_num(.clk(clk), .rst(rst), .q(num1), .d(num2), .ce(enq_fire || deq_fire));
     assign num2 = (enq_fire == 1'b1) ? num1 + 1:
                   (deq_fire == 1'b1) ? num1 - 1:
                   num1;

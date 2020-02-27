@@ -68,9 +68,9 @@ module z1top_fifo_display (
     pixel_stream pixel_stream (
         .pixel_clk(pixel_clk),                              // input
         .rst(1'b0),                                         // input
-        .pixel_stream_dout_data(pixel_stream_dout),         // output
-        .pixel_stream_dout_valid(pixel_stream_dout_valid),  // output
-        .pixel_stream_dout_ready(pixel_stream_dout_ready)   // input
+        .pixel_stream_data(pixel_stream_dout),         // output
+        .pixel_stream_valid(pixel_stream_dout_valid),  // output
+        .pixel_stream_ready(pixel_stream_dout_ready)   // input
     );
 
     localparam FIFO_WIDTH = 8;
@@ -81,7 +81,7 @@ module z1top_fifo_display (
 
     fifo #(.WIDTH(FIFO_WIDTH), .LOGDEPTH (FIFO_LOGDEPTH)) FIFO (
         .clk(pixel_clk),
-        .reset(1'b0),
+        .rst(1'b0),
 
         .enq_valid(fifo_enq_valid),  // input
         .enq_data(fifo_enq_data),    // input
@@ -96,7 +96,7 @@ module z1top_fifo_display (
 
     display_controller display_controller (
        .pixel_clk(pixel_clk),                           // input
-       .pixel_stream_din_data(pixel_stream_din),        // input
+       .pixel_stream_din(pixel_stream_din),        // input
        .pixel_stream_din_valid(pixel_stream_din_valid), // input
        .pixel_stream_din_ready(pixel_stream_din_ready), // output
        .video_out_pData(video_out_pData),               // output
