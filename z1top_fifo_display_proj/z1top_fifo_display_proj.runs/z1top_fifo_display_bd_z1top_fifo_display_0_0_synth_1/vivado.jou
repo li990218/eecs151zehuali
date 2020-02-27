@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Wed Feb 26 17:30:59 2020
-# Process ID: 24231
+# Start of session at: Wed Feb 26 18:32:58 2020
+# Process ID: 29121
 # Current directory: /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/z1top_fifo_display_bd_z1top_fifo_display_0_0_synth_1
 # Command line: vivado -log z1top_fifo_display_bd_z1top_fifo_display_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source z1top_fifo_display_bd_z1top_fifo_display_0_0.tcl
 # Log file: /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/z1top_fifo_display_bd_z1top_fifo_display_0_0_synth_1/z1top_fifo_display_bd_z1top_fifo_display_0_0.vds

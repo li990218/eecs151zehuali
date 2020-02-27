@@ -1,0 +1,1370 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Feb 26 18:09:14 2020
+# Process ID: 1199
+# Current directory: /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5
+# Command line: vivado -mode batch -source scripts/z1top_fifo_display.tcl
+# Log file: /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/vivado.log
+# Journal file: /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/vivado.jou
+#-----------------------------------------------------------
+source scripts/z1top_fifo_display.tcl
+# create_project -force z1top_fifo_display_proj z1top_fifo_display_proj -part xc7z020clg400-1
+# set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
+# add_files -norecurse src/z1top_fifo_display.v
+# add_files -norecurse src/button_parser.v
+# add_files -norecurse src/debouncer.v
+# add_files -norecurse src/synchronizer.v
+# add_files -norecurse src/edge_detector.v
+# add_files -norecurse src/display_controller.v
+# add_files -norecurse src/clk_wiz.v
+# add_files -norecurse src/pixel_stream.v
+# add_files -norecurse src/fifo.v
+# add_files -norecurse ../lib/EECS151.v
+# add_files -norecurse src/ucb_wheeler_hall_bin.mif
+# add_files -fileset constrs_1 -norecurse constrs/pynq-z1.xdc
+# update_compile_order -fileset sources_1
+# check_syntax
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+INFO: [HDL 9-1065] Parsing verilog file "/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/../../lib/EECS151.v" included at line 2. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/z1top_fifo_display.v:2]
+INFO: [HDL 9-3290] back to file '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/z1top_fifo_display.v' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/z1top_fifo_display.v:2]
+INFO: [HDL 9-1065] Parsing verilog file "/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/../../lib/EECS151.v" included at line 1. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/synchronizer.v:1]
+INFO: [HDL 9-3290] back to file '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/synchronizer.v' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/synchronizer.v:1]
+INFO: [HDL 9-1065] Parsing verilog file "/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/../../lib/EECS151.v" included at line 1. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/pixel_stream.v:1]
+INFO: [HDL 9-3290] back to file '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/pixel_stream.v' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/pixel_stream.v:1]
+INFO: [HDL 9-1065] Parsing verilog file "/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/../../lib/EECS151.v" included at line 1. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/fifo.v:1]
+INFO: [HDL 9-3290] back to file '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/fifo.v' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/fifo.v:1]
+INFO: [HDL 9-1065] Parsing verilog file "/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/../../lib/EECS151.v" included at line 1. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/edge_detector.v:1]
+INFO: [HDL 9-3290] back to file '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/edge_detector.v' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/edge_detector.v:1]
+INFO: [HDL 9-1065] Parsing verilog file "/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/../../lib/EECS151.v" included at line 1. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/display_controller.v:1]
+INFO: [HDL 9-3290] back to file '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/display_controller.v' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/display_controller.v:1]
+INFO: [HDL 9-1065] Parsing verilog file "/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/../../lib/EECS151.v" included at line 1. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/debouncer.v:1]
+INFO: [HDL 9-3290] back to file '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/debouncer.v' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/src/debouncer.v:1]
+# update_compile_order -fileset sources_1
+# set_property ip_repo_paths digilent_ips [current_project]
+# update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/digilent_ips'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/share/instsww/xilinx/Vivado/2019.1/data/ip'.
+# create_bd_design "z1top_fifo_display_bd"
+Wrote  : </home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/z1top_fifo_display_bd.bd> 
+# set rgb2dvi_0 [ create_bd_cell -type ip -vlnv digilentinc.com:ip:rgb2dvi:1.4 rgb2dvi_0 ]
+# set_property -dict [ list CONFIG.kClkRange {3} ] $rgb2dvi_0
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'FIFO_WIDTH' by 8 for port or parameter 'fifo_enq_data'
+INFO: [IP_Flow 19-5107] Inferred bus interface 'pixel_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3153] Bus Interface 'pixel_clk': ASSOCIATED_BUSIF bus parameter is missing.
+CRITICAL WARNING: [IP_Flow 19-4751] Bus Interface 'pixel_clk': FREQ_HZ bus parameter is missing for output clock interface.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/digilent_ips'.
+# set z1top_fifo_display_0 [create_bd_cell -type module -reference z1top_fifo_display z1top_fifo_display_0]
+# set TMDS_0 [ create_bd_intf_port -mode Master -vlnv digilentinc.com:interface:tmds_rtl:1.0 TMDS_0 ]
+# set BUTTONS [ create_bd_port -dir I -from 3 -to 0 BUTTONS ]
+# set CLK_125MHZ_FPGA [ create_bd_port -dir I CLK_125MHZ_FPGA ]
+# set LEDS [ create_bd_port -dir O -from 5 -to 0 LEDS ]
+# set SWITCHES [ create_bd_port -dir I -from 1 -to 0 SWITCHES ]
+# connect_bd_intf_net -intf_net rgb2dvi_0_TMDS [get_bd_intf_ports TMDS_0] [get_bd_intf_pins rgb2dvi_0/TMDS]
+# connect_bd_net -net BUTTONS [get_bd_ports BUTTONS] [get_bd_pins z1top_fifo_display_0/BUTTONS]
+# connect_bd_net -net CLK_125MHZ_FPGA [get_bd_ports CLK_125MHZ_FPGA] [get_bd_pins z1top_fifo_display_0/CLK_125MHZ_FPGA]
+# connect_bd_net -net SWITCHES [get_bd_ports SWITCHES] [get_bd_pins z1top_fifo_display_0/SWITCHES]
+# connect_bd_net -net z1top_fifo_display_0_LEDS [get_bd_ports LEDS] [get_bd_pins z1top_fifo_display_0/LEDS]
+# connect_bd_net -net z1top_fifo_display_0_pixel_clk [get_bd_pins rgb2dvi_0/PixelClk] [get_bd_pins z1top_fifo_display_0/pixel_clk]
+# connect_bd_net -net z1top_fifo_display_0_video_out_pData [get_bd_pins rgb2dvi_0/vid_pData] [get_bd_pins z1top_fifo_display_0/video_out_pData]
+WARNING: [BD 41-1306] The connection to interface pin /rgb2dvi_0/vid_pData is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+# connect_bd_net -net z1top_fifo_display_0_video_out_pHSync [get_bd_pins rgb2dvi_0/vid_pHSync] [get_bd_pins z1top_fifo_display_0/video_out_pHSync]
+WARNING: [BD 41-1306] The connection to interface pin /rgb2dvi_0/vid_pHSync is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+# connect_bd_net -net z1top_fifo_display_0_video_out_pVDE [get_bd_pins rgb2dvi_0/vid_pVDE] [get_bd_pins z1top_fifo_display_0/video_out_pVDE]
+WARNING: [BD 41-1306] The connection to interface pin /rgb2dvi_0/vid_pVDE is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+# connect_bd_net -net z1top_fifo_display_0_video_out_pVSync [get_bd_pins rgb2dvi_0/vid_pVSync] [get_bd_pins z1top_fifo_display_0/video_out_pVSync]
+WARNING: [BD 41-1306] The connection to interface pin /rgb2dvi_0/vid_pVSync is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+# validate_bd_design
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=z1top_fifo_display_bd_z1top_fifo_display_0_0_pixel_clk 
+WARNING: [BD 41-927] Following properties on pin /z1top_fifo_display_0/pixel_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=z1top_fifo_display_bd_z1top_fifo_display_0_0_pixel_clk 
+# save_bd_design
+Wrote  : </home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/z1top_fifo_display_bd.bd> 
+# make_wrapper -files [get_files z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/z1top_fifo_display_bd.bd] -top
+INFO: [BD 41-1662] The design 'z1top_fifo_display_bd.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/synth/z1top_fifo_display_bd.v
+VHDL Output written to : /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/sim/z1top_fifo_display_bd.v
+VHDL Output written to : /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/hdl/z1top_fifo_display_bd_wrapper.v
+# add_files -norecurse           z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/hdl/z1top_fifo_display_bd_wrapper.v
+# update_compile_order -fileset sources_1
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+# set_property top z1top_fifo_display_bd_wrapper [current_fileset]
+# update_compile_order -fileset sources_1
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+# launch_runs synth_1
+INFO: [BD 41-1662] The design 'z1top_fifo_display_bd.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/synth/z1top_fifo_display_bd.v
+VHDL Output written to : /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/sim/z1top_fifo_display_bd.v
+VHDL Output written to : /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/hdl/z1top_fifo_display_bd_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rgb2dvi_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block z1top_fifo_display_0 .
+Exporting to file /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/hw_handoff/z1top_fifo_display_bd.hwh
+Generated Block Design Tcl file /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/hw_handoff/z1top_fifo_display_bd_bd.tcl
+Generated Hardware Definition File /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/synth/z1top_fifo_display_bd.hwdef
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:27]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:38]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:49]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'REGISTER_R_CE' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:63]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:82]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:112]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_ROM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:152]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'SYNC_RAM' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:187]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:225]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'XILINX_ASYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:285]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'ASIC_SYNC_RAM_DP' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lib/EECS151.v:335]
+[Wed Feb 26 18:09:44 2020] Launched z1top_fifo_display_bd_rgb2dvi_0_0_synth_1, z1top_fifo_display_bd_z1top_fifo_display_0_0_synth_1...
+Run output will be captured here:
+z1top_fifo_display_bd_rgb2dvi_0_0_synth_1: /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/z1top_fifo_display_bd_rgb2dvi_0_0_synth_1/runme.log
+z1top_fifo_display_bd_z1top_fifo_display_0_0_synth_1: /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/z1top_fifo_display_bd_z1top_fifo_display_0_0_synth_1/runme.log
+[Wed Feb 26 18:09:44 2020] Launched synth_1...
+Run output will be captured here: /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/synth_1/runme.log
+# wait_on_run synth_1 -verbose
+[Wed Feb 26 18:09:44 2020] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log z1top_fifo_display_bd_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source z1top_fifo_display_bd_wrapper.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source z1top_fifo_display_bd_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/digilent_ips'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/share/instsww/xilinx/Vivado/2019.1/data/ip'.
+Command: synth_design -top z1top_fifo_display_bd_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6082 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1856.082 ; gain = 152.578 ; free physical = 8058 ; free virtual = 16214
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'z1top_fifo_display_bd_wrapper' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/hdl/z1top_fifo_display_bd_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'z1top_fifo_display_bd' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/synth/z1top_fifo_display_bd.v:13]
+INFO: [Synth 8-6157] synthesizing module 'z1top_fifo_display_bd_rgb2dvi_0_0' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/synth_1/.Xil/Vivado-5552-c125m-5.EECS.Berkeley.EDU/realtime/z1top_fifo_display_bd_rgb2dvi_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'z1top_fifo_display_bd_rgb2dvi_0_0' (1#1) [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/synth_1/.Xil/Vivado-5552-c125m-5.EECS.Berkeley.EDU/realtime/z1top_fifo_display_bd_rgb2dvi_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'z1top_fifo_display_bd_z1top_fifo_display_0_0' [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/synth_1/.Xil/Vivado-5552-c125m-5.EECS.Berkeley.EDU/realtime/z1top_fifo_display_bd_z1top_fifo_display_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'z1top_fifo_display_bd_z1top_fifo_display_0_0' (2#1) [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/synth_1/.Xil/Vivado-5552-c125m-5.EECS.Berkeley.EDU/realtime/z1top_fifo_display_bd_z1top_fifo_display_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'z1top_fifo_display_bd' (3#1) [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/synth/z1top_fifo_display_bd.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'z1top_fifo_display_bd_wrapper' (4#1) [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/hdl/z1top_fifo_display_bd_wrapper.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1909.844 ; gain = 206.340 ; free physical = 8084 ; free virtual = 16239
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1912.805 ; gain = 209.301 ; free physical = 8079 ; free virtual = 16235
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1912.805 ; gain = 209.301 ; free physical = 8079 ; free virtual = 16235
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc] for cell 'z1top_fifo_display_bd_i/rgb2dvi_0'
+Finished Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc] for cell 'z1top_fifo_display_bd_i/rgb2dvi_0'
+Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_z1top_fifo_display_0_0/z1top_fifo_display_bd_z1top_fifo_display_0_0/z1top_fifo_display_bd_z1top_fifo_display_0_0_in_context.xdc] for cell 'z1top_fifo_display_bd_i/z1top_fifo_display_0'
+Finished Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_z1top_fifo_display_0_0/z1top_fifo_display_bd_z1top_fifo_display_0_0/z1top_fifo_display_bd_z1top_fifo_display_0_0_in_context.xdc] for cell 'z1top_fifo_display_bd_i/z1top_fifo_display_0'
+Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN1'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN2'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:36]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN3'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:37]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN4'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN7'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:39]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN8'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:40]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN9'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:41]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN10'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:42]
+Finished Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/z1top_fifo_display_bd_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/z1top_fifo_display_bd_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/z1top_fifo_display_bd_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1964.496 ; gain = 0.000 ; free physical = 7985 ; free virtual = 16142
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1964.496 ; gain = 0.000 ; free physical = 7985 ; free virtual = 16142
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1964.500 ; gain = 260.996 ; free physical = 8057 ; free virtual = 16214
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1964.500 ; gain = 260.996 ; free physical = 8057 ; free virtual = 16214
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_0_clk_n. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 1).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_0_clk_n. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 2).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_0_clk_p. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_0_clk_p. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_0_data_n[0]. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_0_data_n[0]. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_0_data_n[1]. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_0_data_n[1]. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_0_data_n[2]. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 9).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_0_data_n[2]. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 10).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_0_data_p[0]. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 11).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_0_data_p[0]. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 12).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_0_data_p[1]. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 13).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_0_data_p[1]. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 14).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_0_data_p[2]. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 15).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_0_data_p[2]. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0_in_context.xdc, line 16).
+Applied set_property IO_BUFFER_TYPE = NONE for CLK_125MHZ_FPGA. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_z1top_fifo_display_0_0/z1top_fifo_display_bd_z1top_fifo_display_0_0/z1top_fifo_display_bd_z1top_fifo_display_0_0_in_context.xdc, line 1).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK_125MHZ_FPGA. (constraint file  /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_z1top_fifo_display_0_0/z1top_fifo_display_bd_z1top_fifo_display_0_0/z1top_fifo_display_bd_z1top_fifo_display_0_0_in_context.xdc, line 2).
+Applied set_property DONT_TOUCH = true for z1top_fifo_display_bd_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z1top_fifo_display_bd_i/rgb2dvi_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z1top_fifo_display_bd_i/z1top_fifo_display_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1964.500 ; gain = 260.996 ; free physical = 8057 ; free virtual = 16214
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1964.508 ; gain = 261.004 ; free physical = 8056 ; free virtual = 16213
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1964.508 ; gain = 261.004 ; free physical = 8036 ; free virtual = 16195
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1987.492 ; gain = 283.988 ; free physical = 7921 ; free virtual = 16081
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1987.492 ; gain = 283.988 ; free physical = 7921 ; free virtual = 16081
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1996.508 ; gain = 293.004 ; free physical = 7919 ; free virtual = 16079
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 2010.387 ; gain = 306.883 ; free physical = 7919 ; free virtual = 16079
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 2010.387 ; gain = 306.883 ; free physical = 7919 ; free virtual = 16079
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 2010.387 ; gain = 306.883 ; free physical = 7919 ; free virtual = 16079
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 2010.387 ; gain = 306.883 ; free physical = 7919 ; free virtual = 16079
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 2010.387 ; gain = 306.883 ; free physical = 7919 ; free virtual = 16079
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 2010.387 ; gain = 306.883 ; free physical = 7919 ; free virtual = 16079
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+---------------------------------------------+----------+
+|      |BlackBox name                                |Instances |
++------+---------------------------------------------+----------+
+|1     |z1top_fifo_display_bd_rgb2dvi_0_0            |         1|
+|2     |z1top_fifo_display_bd_z1top_fifo_display_0_0 |         1|
++------+---------------------------------------------+----------+
+
+Report Cell Usage: 
++------+---------------------------------------------+------+
+|      |Cell                                         |Count |
++------+---------------------------------------------+------+
+|1     |z1top_fifo_display_bd_rgb2dvi_0_0            |     1|
+|2     |z1top_fifo_display_bd_z1top_fifo_display_0_0 |     1|
+|3     |IBUF                                         |     6|
+|4     |OBUF                                         |     6|
++------+---------------------------------------------+------+
+
+Report Instance Areas: 
++------+--------------------------+----------------------+------+
+|      |Instance                  |Module                |Cells |
++------+--------------------------+----------------------+------+
+|1     |top                       |                      |    54|
+|2     |  z1top_fifo_display_bd_i |z1top_fifo_display_bd |    42|
++------+--------------------------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 2010.387 ; gain = 306.883 ; free physical = 7919 ; free virtual = 16079
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 2010.387 ; gain = 255.188 ; free physical = 7976 ; free virtual = 16136
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 2010.391 ; gain = 306.883 ; free physical = 7991 ; free virtual = 16151
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2023.262 ; gain = 0.000 ; free physical = 7922 ; free virtual = 16082
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+21 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 2023.262 ; gain = 475.594 ; free physical = 8017 ; free virtual = 16173
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2023.262 ; gain = 0.000 ; free physical = 8017 ; free virtual = 16173
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/synth_1/z1top_fifo_display_bd_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file z1top_fifo_display_bd_wrapper_utilization_synth.rpt -pb z1top_fifo_display_bd_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 26 18:12:51 2020...
+[Wed Feb 26 18:12:52 2020] synth_1 finished
+wait_on_run: Time (s): cpu = 00:02:33 ; elapsed = 00:03:08 . Memory (MB): peak = 1761.754 ; gain = 0.000 ; free physical = 8674 ; free virtual = 16825
+# if {[get_property PROGRESS [get_runs synth_1]] != "100%"} {   
+#   error "ERROR: synth_1 failed"   
+# } 
+# launch_runs -verbose impl_1 -to_step write_bitstream
+[Wed Feb 26 18:12:52 2020] Launched impl_1...
+Run output will be captured here: /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/impl_1/runme.log
+# wait_on_run impl_1 -verbose
+[Wed Feb 26 18:12:52 2020] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log z1top_fifo_display_bd_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source z1top_fifo_display_bd_wrapper.tcl -notrace
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source z1top_fifo_display_bd_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/digilent_ips'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/share/instsww/xilinx/Vivado/2019.1/data/ip'.
+Command: link_design -top z1top_fifo_display_bd_wrapper -part xc7z020clg400-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-454] Reading design checkpoint '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0.dcp' for cell 'z1top_fifo_display_bd_i/rgb2dvi_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_z1top_fifo_display_0_0/z1top_fifo_display_bd_z1top_fifo_display_0_0.dcp' for cell 'z1top_fifo_display_bd_i/z1top_fifo_display_0'
+INFO: [Netlist 29-17] Analyzing 255 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/src/rgb2dvi.xdc] for cell 'z1top_fifo_display_bd_i/rgb2dvi_0/U0'
+Finished Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/src/rgb2dvi.xdc] for cell 'z1top_fifo_display_bd_i/rgb2dvi_0/U0'
+Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN1'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN2'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN3'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN4'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN7'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN8'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN9'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_OUT_PIN10'. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/constrs/pynq-z1.xdc]
+Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/src/rgb2dvi_clocks.xdc] for cell 'z1top_fifo_display_bd_i/rgb2dvi_0/U0'
+Finished Parsing XDC File [/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/src/rgb2dvi_clocks.xdc] for cell 'z1top_fifo_display_bd_i/rgb2dvi_0/U0'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1830.238 ; gain = 0.000 ; free physical = 8123 ; free virtual = 16276
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 64 instances were transformed.
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 32 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 32 instances
+
+12 Infos, 8 Warnings, 8 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1830.238 ; gain = 326.672 ; free physical = 8123 ; free virtual = 16276
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1912.812 ; gain = 82.566 ; free physical = 8116 ; free virtual = 16270
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+Ending Cache Timing Information Task | Checksum: 184278b21
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2339.641 ; gain = 426.828 ; free physical = 7719 ; free virtual = 15871
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 20d99621f
+
+Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2454.578 ; gain = 0.004 ; free physical = 7621 ; free virtual = 15773
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 2 cells
+INFO: [Opt 31-1021] In phase Retarget, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 20d99621f
+
+Time (s): cpu = 00:00:00.30 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2454.578 ; gain = 0.004 ; free physical = 7621 ; free virtual = 15773
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 1f7f03456
+
+Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2454.578 ; gain = 0.004 ; free physical = 7621 ; free virtual = 15773
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 4 cells
+
+Phase 4 BUFG optimization
+INFO: [Opt 31-194] Inserted BUFG z1top_fifo_display_bd_i/rgb2dvi_0/U0/ClockGenInternal.ClockGenX/PixelClk_BUFG_inst to drive 8 load(s) on clock net z1top_fifo_display_bd_i/rgb2dvi_0/U0/PixelClkIO
+INFO: [Opt 31-194] Inserted BUFG z1top_fifo_display_bd_i/rgb2dvi_0/U0/ClockGenInternal.ClockGenX/SerialClk_BUFG_inst to drive 8 load(s) on clock net z1top_fifo_display_bd_i/rgb2dvi_0/U0/SerialClkIO
+INFO: [Opt 31-193] Inserted 2 BUFG(s) on clock nets
+Phase 4 BUFG optimization | Checksum: 1c5ebb961
+
+Time (s): cpu = 00:00:00.41 ; elapsed = 00:00:00.27 . Memory (MB): peak = 2454.578 ; gain = 0.004 ; free physical = 7621 ; free virtual = 15773
+INFO: [Opt 31-662] Phase BUFG optimization created 2 cells of which 2 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 1c5ebb961
+
+Time (s): cpu = 00:00:00.43 ; elapsed = 00:00:00.30 . Memory (MB): peak = 2454.578 ; gain = 0.004 ; free physical = 7621 ; free virtual = 15773
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 2b24705c2
+
+Time (s): cpu = 00:00:00.45 ; elapsed = 00:00:00.31 . Memory (MB): peak = 2454.578 ; gain = 0.004 ; free physical = 7621 ; free virtual = 15773
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               2  |                                              1  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               4  |                                              0  |
+|  BUFG optimization            |               2  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2454.578 ; gain = 0.000 ; free physical = 7621 ; free virtual = 15773
+Ending Logic Optimization Task | Checksum: d12a7731
+
+Time (s): cpu = 00:00:00.47 ; elapsed = 00:00:00.34 . Memory (MB): peak = 2454.578 ; gain = 0.004 ; free physical = 7621 ; free virtual = 15773
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=17.688 | TNS=0.000 |
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 128 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 128 newly gated: 0 Total Ports: 256
+Number of Flops added for Enable Generation: 10
+
+Ending PowerOpt Patch Enables Task | Checksum: 170048877
+
+Time (s): cpu = 00:00:00.57 ; elapsed = 00:00:00.57 . Memory (MB): peak = 2738.555 ; gain = 0.000 ; free physical = 7584 ; free virtual = 15737
+Ending Power Optimization Task | Checksum: 170048877
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 2738.555 ; gain = 283.977 ; free physical = 7592 ; free virtual = 15746
+
+Starting Final Cleanup Task
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Logic Optimization Task | Checksum: 162785ec2
+
+Time (s): cpu = 00:00:00.86 ; elapsed = 00:00:00.56 . Memory (MB): peak = 2738.555 ; gain = 0.000 ; free physical = 7591 ; free virtual = 15743
+Ending Final Cleanup Task | Checksum: 162785ec2
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2738.555 ; gain = 0.000 ; free physical = 7591 ; free virtual = 15743
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2738.555 ; gain = 0.000 ; free physical = 7591 ; free virtual = 15743
+Ending Netlist Obfuscation Task | Checksum: 162785ec2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2738.555 ; gain = 0.000 ; free physical = 7591 ; free virtual = 15743
+INFO: [Common 17-83] Releasing license: Implementation
+41 Infos, 8 Warnings, 8 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2738.555 ; gain = 908.309 ; free physical = 7591 ; free virtual = 15743
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2738.555 ; gain = 0.000 ; free physical = 7591 ; free virtual = 15743
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2738.555 ; gain = 0.000 ; free physical = 7587 ; free virtual = 15741
+INFO: [Common 17-1381] The checkpoint '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/impl_1/z1top_fifo_display_bd_wrapper_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file z1top_fifo_display_bd_wrapper_drc_opted.rpt -pb z1top_fifo_display_bd_wrapper_drc_opted.pb -rpx z1top_fifo_display_bd_wrapper_drc_opted.rpx
+Command: report_drc -file z1top_fifo_display_bd_wrapper_drc_opted.rpt -pb z1top_fifo_display_bd_wrapper_drc_opted.pb -rpx z1top_fifo_display_bd_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/impl_1/z1top_fifo_display_bd_wrapper_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 4 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7585 ; free virtual = 15740
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: bc4c96c0
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7585 ; free virtual = 15740
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7585 ; free virtual = 15740
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: f468499d
+
+Time (s): cpu = 00:00:00.91 ; elapsed = 00:00:00.62 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7583 ; free virtual = 15737
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 128d9fadd
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7581 ; free virtual = 15735
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 128d9fadd
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7581 ; free virtual = 15735
+Phase 1 Placer Initialization | Checksum: 128d9fadd
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7581 ; free virtual = 15735
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1bed9fe0b
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7580 ; free virtual = 15734
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7569 ; free virtual = 15723
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Very High Fanout              |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                 |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  HD Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                         |            0  |              0  |                     0  |           0  |           2  |  00:00:00  |
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 1b8bfb423
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7568 ; free virtual = 15722
+Phase 2.2 Global Placement Core | Checksum: 18728a3bb
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7568 ; free virtual = 15721
+Phase 2 Global Placement | Checksum: 18728a3bb
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7568 ; free virtual = 15721
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1f1cd7763
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7570 ; free virtual = 15723
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 181438ed4
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7569 ; free virtual = 15723
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: c19ab1e0
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7569 ; free virtual = 15723
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: f38ec44e
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7569 ; free virtual = 15723
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 200e1504e
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7565 ; free virtual = 15720
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 16b82c814
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7563 ; free virtual = 15718
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 1bd965586
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7561 ; free virtual = 15716
+Phase 3 Detail Placement | Checksum: 1bd965586
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7562 ; free virtual = 15717
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1421aaf81
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1421aaf81
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7556 ; free virtual = 15712
+INFO: [Place 30-746] Post Placement Timing Summary WNS=14.511. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 2161d1726
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7556 ; free virtual = 15712
+Phase 4.1 Post Commit Optimization | Checksum: 2161d1726
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7556 ; free virtual = 15712
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 2161d1726
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7557 ; free virtual = 15712
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 2161d1726
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7557 ; free virtual = 15712
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7557 ; free virtual = 15712
+Phase 4.4 Final Placement Cleanup | Checksum: 139ecfd2f
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7557 ; free virtual = 15712
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 139ecfd2f
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7557 ; free virtual = 15712
+Ending Placer Task | Checksum: 62d3fb2b
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7557 ; free virtual = 15712
+INFO: [Common 17-83] Releasing license: Implementation
+68 Infos, 8 Warnings, 8 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:13 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7567 ; free virtual = 15723
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7567 ; free virtual = 15723
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.48 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7542 ; free virtual = 15703
+INFO: [Common 17-1381] The checkpoint '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/impl_1/z1top_fifo_display_bd_wrapper_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file z1top_fifo_display_bd_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.22 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7556 ; free virtual = 15713
+INFO: [runtcl-4] Executing : report_utilization -file z1top_fifo_display_bd_wrapper_utilization_placed.rpt -pb z1top_fifo_display_bd_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file z1top_fifo_display_bd_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7567 ; free virtual = 15724
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 4 CPUs
+Checksum: PlaceDB: 3f37eb7a ConstDB: 0 ShapeSum: 239c0fb1 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 888b528c
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7437 ; free virtual = 15592
+Post Restoration Checksum: NetGraph: 1a684099 NumContArr: 6e2311f3 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 888b528c
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7405 ; free virtual = 15561
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 888b528c
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7389 ; free virtual = 15544
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 888b528c
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7389 ; free virtual = 15544
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 1df59a28b
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:21 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7369 ; free virtual = 15524
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=14.564 | TNS=0.000  | WHS=-2.515 | THS=-130.143|
+
+Phase 2 Router Initialization | Checksum: 22042908e
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:21 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7374 ; free virtual = 15530
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 1275
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 1275
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 105919d58
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:29 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7373 ; free virtual = 15529
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 204
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=10.303 | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1c36c2153
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:35 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15530
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=10.303 | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 1685c79db
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:35 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15530
+Phase 4 Rip-up And Reroute | Checksum: 1685c79db
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:35 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15530
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 1685c79db
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:35 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15530
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1685c79db
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:35 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15530
+Phase 5 Delay and Skew Optimization | Checksum: 1685c79db
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:35 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15530
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1349a5a23
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:35 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15530
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=10.334 | TNS=0.000  | WHS=0.057  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 992bbecb
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:36 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15530
+Phase 6 Post Hold Fix | Checksum: 992bbecb
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:36 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15530
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.55794 %
+  Global Horizontal Routing Utilization  = 1.22811 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 8d48dc8f
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:36 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15530
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 8d48dc8f
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:36 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15529
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 92df1f7a
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:36 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15530
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=10.334 | TNS=0.000  | WHS=0.057  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 92df1f7a
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:36 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7372 ; free virtual = 15530
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:36 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7396 ; free virtual = 15553
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+86 Infos, 8 Warnings, 8 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:54 ; elapsed = 00:00:40 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7396 ; free virtual = 15553
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7396 ; free virtual = 15553
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.60 . Memory (MB): peak = 2787.578 ; gain = 0.000 ; free physical = 7377 ; free virtual = 15542
+INFO: [Common 17-1381] The checkpoint '/home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/impl_1/z1top_fifo_display_bd_wrapper_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file z1top_fifo_display_bd_wrapper_drc_routed.rpt -pb z1top_fifo_display_bd_wrapper_drc_routed.pb -rpx z1top_fifo_display_bd_wrapper_drc_routed.rpx
+Command: report_drc -file z1top_fifo_display_bd_wrapper_drc_routed.rpt -pb z1top_fifo_display_bd_wrapper_drc_routed.pb -rpx z1top_fifo_display_bd_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/impl_1/z1top_fifo_display_bd_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file z1top_fifo_display_bd_wrapper_methodology_drc_routed.rpt -pb z1top_fifo_display_bd_wrapper_methodology_drc_routed.pb -rpx z1top_fifo_display_bd_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file z1top_fifo_display_bd_wrapper_methodology_drc_routed.rpt -pb z1top_fifo_display_bd_wrapper_methodology_drc_routed.pb -rpx z1top_fifo_display_bd_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 4 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.runs/impl_1/z1top_fifo_display_bd_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2789.379 ; gain = 0.000 ; free physical = 7386 ; free virtual = 15545
+INFO: [runtcl-4] Executing : report_power -file z1top_fifo_display_bd_wrapper_power_routed.rpt -pb z1top_fifo_display_bd_wrapper_power_summary_routed.pb -rpx z1top_fifo_display_bd_wrapper_power_routed.rpx
+Command: report_power -file z1top_fifo_display_bd_wrapper_power_routed.rpt -pb z1top_fifo_display_bd_wrapper_power_summary_routed.pb -rpx z1top_fifo_display_bd_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+99 Infos, 8 Warnings, 8 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file z1top_fifo_display_bd_wrapper_route_status.rpt -pb z1top_fifo_display_bd_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file z1top_fifo_display_bd_wrapper_timing_summary_routed.rpt -pb z1top_fifo_display_bd_wrapper_timing_summary_routed.pb -rpx z1top_fifo_display_bd_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 4 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file z1top_fifo_display_bd_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file z1top_fifo_display_bd_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file z1top_fifo_display_bd_wrapper_bus_skew_routed.rpt -pb z1top_fifo_display_bd_wrapper_bus_skew_routed.pb -rpx z1top_fifo_display_bd_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 4 CPUs
+Command: write_bitstream -force z1top_fifo_display_bd_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 4 threads
+WARNING: [DRC ZPS7-1] PS7 block required: The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 1 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 4 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./z1top_fifo_display_bd_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+117 Infos, 9 Warnings, 8 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:38 ; elapsed = 00:00:26 . Memory (MB): peak = 3071.211 ; gain = 281.832 ; free physical = 7349 ; free virtual = 15514
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 26 18:15:29 2020...
+[Wed Feb 26 18:15:29 2020] impl_1 finished
+wait_on_run: Time (s): cpu = 00:00:01 ; elapsed = 00:02:37 . Memory (MB): peak = 1761.754 ; gain = 0.000 ; free physical = 8659 ; free virtual = 16824
+# if {[get_property PROGRESS [get_runs impl_1]] != "100%"} {   
+#   error "ERROR: impl_1 failed"   
+# } 
+# exec cp z1top_fifo_display_proj/z1top_fifo_display_proj.runs/impl_1/z1top_fifo_display_bd_wrapper.bit z1top_fifo_display.bit
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 26 18:15:29 2020...

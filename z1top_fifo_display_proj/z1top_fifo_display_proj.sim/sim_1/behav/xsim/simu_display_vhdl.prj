@@ -1,0 +1,13 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ipshared/20df/src/ClockGen.vhd" \
+"../../../../z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ipshared/20df/src/SyncAsync.vhd" \
+"../../../../z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ipshared/20df/src/SyncAsyncReset.vhd" \
+"../../../../z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ipshared/20df/src/DVI_Constants.vhd" \
+"../../../../z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ipshared/20df/src/OutputSERDES.vhd" \
+"../../../../z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ipshared/20df/src/TMDS_Encoder.vhd" \
+"../../../../z1top_fifo_display_proj.srcs/sources_1/bd/z1top_fifo_display_bd/ipshared/20df/src/rgb2dvi.vhd" \
+"../../../../z1top_fifo_display_proj.ip_user_files/bd/z1top_fifo_display_bd/ip/z1top_fifo_display_bd_rgb2dvi_0_0/sim/z1top_fifo_display_bd_rgb2dvi_0_0.vhd" \
+
+# Do not sort compile order
+nosort

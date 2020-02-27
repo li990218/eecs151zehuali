@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Feb 26 19:05:49 2020
+# Process ID: 28686
+# Current directory: /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.sim/sim_1/behav/xsim/xsim.dir/simu_display_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.sim/sim_1/behav/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/cc/eecs151/sp20/class/eecs151-abm/Downloads/fpga_labs_sp20-master/lab5/z1top_fifo_display_proj/z1top_fifo_display_proj.sim/sim_1/behav/xsim/xsim.dir/simu_display_behav/webtalk/xsim_webtalk.tcl -notrace

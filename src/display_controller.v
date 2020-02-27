@@ -75,7 +75,8 @@ module display_controller #(
     // to some constant value to test if your code works with a monitor
     // For task 2, you need to implement proper control logic to enqueue the 'pixel_stream_din'
 
-    assign video_out_pData = 24'h0000FF; // task 1
+    assign video_out_pData = (pixel_stream_din_valid == 1) ? pixel_stream_din : 0;
+    assign pixel_stream_din_ready = (x_pixel_val < H_ACTIVE_VIDEO && y_pixel_val < V_ACTIVE_VIDEO) ? 1 : 0;
     
 //    assign video_out_pData = pixel_stream_din; // task 2
 

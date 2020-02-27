@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-//Date        : Wed Feb 26 17:29:44 2020
+//Date        : Wed Feb 26 18:32:02 2020
 //Host        : c125m-5.EECS.Berkeley.EDU running 64-bit CentOS Linux release 7.7.1908 (Core)
 //Command     : generate_target z1top_fifo_display_bd.bd
 //Design      : z1top_fifo_display_bd

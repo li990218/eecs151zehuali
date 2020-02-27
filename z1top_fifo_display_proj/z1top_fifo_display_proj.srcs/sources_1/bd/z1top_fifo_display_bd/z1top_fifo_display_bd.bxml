@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="z1top_fifo_display_bd" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1582766984"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1582766984"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1582766984"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1582766984"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1582770723"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1582770723"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1582770723"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1582770723"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/z1top_fifo_display_bd_rgb2dvi_0_0/z1top_fifo_display_bd_rgb2dvi_0_0.xci" Type="IP">
         <Instance HierarchyPath="rgb2dvi_0"/>

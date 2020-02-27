@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../lib/EECS151.v" \
+"../../../../../src/button_parser.v" \
+"../../../../../src/clk_wiz.v" \
+"../../../../../src/debouncer.v" \
+"../../../../../src/display_controller.v" \
+"../../../../../src/edge_detector.v" \
+"../../../../../src/fifo.v" \
+"../../../../../src/pixel_stream.v" \
+"../../../../../src/synchronizer.v" \
+"../../../../../src/z1top_fifo_display.v" \
+"../../../../../../../../fifo/fifo.srcs/sim_1/new/simu_display.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
